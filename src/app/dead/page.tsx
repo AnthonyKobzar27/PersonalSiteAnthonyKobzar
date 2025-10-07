@@ -7,7 +7,7 @@ export default function Dead() {
   const router = useRouter();
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = () => {
       // Any key press takes you back
       router.push('/');
     };

@@ -4,17 +4,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+const menuItems = [
+  { id: 0, label: '> RESEARCH', href: '/research' },
+  { id: 1, label: '> BUILDS', href: '/builds' },
+  { id: 2, label: '> CONTACT', href: '/contact' }
+];
+
 export default function Home() {
   const [highlightedMenuItem, setHighlightedMenuItem] = useState(0);
   const [showTerminalInput, setShowTerminalInput] = useState(false);
   const [terminalInput, setTerminalInput] = useState('');
   const router = useRouter();
-
-  const menuItems = [
-    { id: 0, label: '> RESEARCH', href: '/research' },
-    { id: 1, label: '> BUILDS', href: '/builds' },
-    { id: 2, label: '> CONTACT', href: '/contact' }
-  ];
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -65,7 +65,7 @@ export default function Home() {
                 C:\Users\Anthony_Kobzar
               </h1>
               <h2 className="text-lg font-mono text-black">
-                Howdy! Welcome to my landing page, I'm Anthony, I'm currently a sophomore at UC Berkeley studying Math & Computer Science, outside of class I'm involved / interested in AI Research (Robotics & NLP), Web3 + Crypto, Post-Quantum Cryptography, and Building spontaneous things. Love to talk about fishing, Russian literature, rugby, Chelsea FC, and travel - thanks for visiting!
+                Howdy! Welcome to my landing page, I&apos;m Anthony, I&apos;m currently a sophomore at UC Berkeley studying Math & Computer Science, outside of class I&apos;m involved / interested in AI Research (Robotics & NLP), Web3 + Crypto, Post-Quantum Cryptography, and Building spontaneous things. Love to talk about fishing, Russian literature, rugby, Chelsea FC, and travel - thanks for visiting!
               </h2>
               <div className="text-lg space-y-2 font-mono text-black">
                 <p className="mb-6">SELECT AN OPTION:</p>
