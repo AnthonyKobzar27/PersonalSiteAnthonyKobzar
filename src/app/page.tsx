@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 
 const menuItems = [
   { id: 0, label: '> RESEARCH', href: '/research' },
@@ -67,6 +69,15 @@ export default function Home() {
               <h2 className="text-lg font-mono text-black">
                 Howdy! Welcome to my landing page, I&apos;m Anthony, I&apos;m currently a sophomore at UC Berkeley studying Math & Computer Science, outside of class I&apos;m involved / interested in AI Research (Robotics & NLP), Web3 + Crypto, Post-Quantum Cryptography, and Building spontaneous things. Love to talk about fishing, Russian literature, rugby, Chelsea FC, and travel - thanks for visiting!
               </h2>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline" className="font-mono border-black">UC Berkeley</Badge>
+                <Badge variant="outline" className="font-mono border-black">Math & CS</Badge>
+                <Badge variant="outline" className="font-mono border-black">AI Research</Badge>
+                <Badge variant="outline" className="font-mono border-black">Web3</Badge>
+              </div>
+
+              <Separator className="bg-black/20" />
               <div className="text-lg space-y-2 font-mono text-black">
                 <p className="mb-6">SELECT AN OPTION:</p>
                 <div className="flex flex-col items-start space-y-1">
@@ -102,10 +113,9 @@ export default function Home() {
                           e.stopPropagation();
                           if (terminalInput.trim() === 'rm -rf /') {
                             window.location.href = '/dead';
-                          } else {
-                            setTerminalInput('');
-                            setShowTerminalInput(false);
                           }
+                          setTerminalInput('');
+                          setShowTerminalInput(false);
                         } else if (e.key === 'Escape') {
                           e.preventDefault();
                           e.stopPropagation();

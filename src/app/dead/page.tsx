@@ -2,11 +2,17 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export default function Dead() {
   const router = useRouter();
 
   useEffect(() => {
+    // Show easter egg toast immediately
+    setTimeout(() => {
+      toast.success('1 / 1 easter egg found!');
+    }, 100);
+
     const handleKeyDown = () => {
       // Any key press takes you back
       router.push('/');
@@ -42,7 +48,7 @@ export default function Dead() {
         </div>
 
         {/* Reboot Instructions */}
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <div className="inline-block border border-black px-6 py-3 animate-pulse">
             <p className="text-black font-bold text-sm">PRESS ANY KEY TO REBOOT SYSTEM</p>
           </div>
